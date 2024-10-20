@@ -1,0 +1,14 @@
+graph TD
+    A[Upload Video] --> B[Process Video]
+    B --> C[Extract Frames]
+    B --> D[Extract Audio & Text]
+    C & D --> E[Create Multi-Modal Index]
+    E --> F[Set Up RAG System]
+    F --> G[Query Processing]
+    G --> H{Content Analysis}
+    H --> I[Guidelines Compliance]
+    H --> J[Age Restriction Check]
+    H --> K[Movie Review Extraction]
+    I & J & K --> L[Generate Reports]
+    L --> M[Analyze Results]
+    M --> N[Take Action]

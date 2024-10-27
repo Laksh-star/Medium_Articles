@@ -36,12 +36,6 @@ os.environ["TOGETHER_API_KEY"] = "your-together-api-key"
 self.tavily_client = TavilyClient(api_key="your-tavily-api-key")
 ```
 
-### Running the System
-
-```python
-python main.py
-```
-
 ## 📂 Output Structure
 
 The system generates several files in the `article_outputs` directory:

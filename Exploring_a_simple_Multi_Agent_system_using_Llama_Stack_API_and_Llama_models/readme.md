@@ -92,6 +92,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Uses Tavily API for web research
 - Inspired by multi-agent AI systems
 
-## 📮 Contact
-
-For questions and support, please open an issue in the GitHub repository.

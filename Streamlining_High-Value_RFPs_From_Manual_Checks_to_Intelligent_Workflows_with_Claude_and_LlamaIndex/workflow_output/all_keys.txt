@@ -1,0 +1,9 @@
+1. What are the technical requirements for the IoT integration in the Smart Healthcare IoT Platform Integration Project?
+2. What are the sustainability requirements specified in the RFP for the project?
+3. What are the security requirements outlined in the RFP for the healthcare monitoring platform?
+4. What are the mandatory qualifications and certifications required from vendors for the project?
+5. What are the proposal requirements specified in the RFP for vendors?
+6. What are the evaluation criteria for the proposals in terms of technical capability, sustainability focus, experience and expertise, and cost?
+7. What are the submission guidelines provided in the RFP for vendors to follow?
+8. What is the timeline for the RFP process, including key dates and milestones?
+9. What are the terms and conditions set forth in the RFP for vendors participating in the Smart Healthcare IoT Platform Integration Project?

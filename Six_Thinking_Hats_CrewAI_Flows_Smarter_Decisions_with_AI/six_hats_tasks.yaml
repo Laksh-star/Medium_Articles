@@ -1,0 +1,40 @@
+# six_hats_tasks.yaml
+white_hat_analysis:
+  description: Collect and present all available data relevant to the decision using {decision_data}
+  expected_output: A report summarizing facts and data
+  verbose: true
+
+red_hat_analysis:
+  description: Evaluate emotional aspects and intuitive reactions to the decision using {decision_data}
+  expected_output: A summary of emotional impacts and stakeholder feelings
+  verbose: true
+
+black_hat_analysis:
+  description: Analyze potential risks and problems in the decision using {decision_data}
+  expected_output: A comprehensive risk assessment report
+  verbose: true
+
+yellow_hat_analysis:
+  description: Identify benefits and opportunities in the decision using {decision_data}
+  expected_output: A summary of advantages and potential positive outcomes
+  verbose: true
+
+green_hat_analysis:
+  description: Generate creative solutions and alternative approaches
+  expected_output: A list of innovative ideas and solutions
+  verbose: true
+
+blue_hat_analysis:
+  description: Coordinate the thinking process and synthesize initial findings
+  expected_output: A structured overview of the analysis process and key points
+  verbose: true
+
+synthesis:
+  description: Integrate insights from all hat analyses into recommendations
+  expected_output: A comprehensive synthesis of all perspectives and key recommendations
+  verbose: true
+
+implementation_planning:
+  description: Develop concrete action plans from synthesized recommendations and provides synthesis as appendix.
+  expected_output: A detailed implementation plan with timelines and responsibilities
+  verbose: true

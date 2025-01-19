@@ -4,7 +4,7 @@ Refer the folliwing to install copilotkit:
 2. 
 **Sample Project Structure**
 
-
+```
 ├─ app/
 │   ├─ layout.tsx          # Global layout (includes CopilotKit provider)
 │   ├─ page.tsx            # Optional home page
@@ -17,3 +17,4 @@ Refer the folliwing to install copilotkit:
 ├─ package.json
 ├─ README.md
 └─ ...
+```

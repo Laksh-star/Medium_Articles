@@ -3,6 +3,8 @@ Refer the folliwing to install copilotkit:
 1. https://docs.copilotkit.ai/quickstart
 2. 
 **Sample Project Structure**
+
+
 ├─ app/
 │   ├─ layout.tsx          # Global layout (includes CopilotKit provider)
 │   ├─ page.tsx            # Optional home page

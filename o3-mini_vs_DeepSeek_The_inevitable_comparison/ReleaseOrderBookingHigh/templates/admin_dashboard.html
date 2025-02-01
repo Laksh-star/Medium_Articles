@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('admin_clients') }}">Manage Clients</a></li>
+    <li><a href="{{ url_for('admin_adtypes') }}">Manage Ad Types</a></li>
+    <li><a href="{{ url_for('admin_platforms') }}">Manage Platforms</a></li>
+    <li><a href="{{ url_for('admin_inventory') }}">Manage Inventory Slots</a></li>
+    <li><a href="{{ url_for('admin_limits') }}">Manage Discount &amp; Due Limits</a></li>
+</ul>
+<a href="{{ url_for('admin_logout') }}">Logout</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Platforms</h2>
+<form method="post">
+    <label for="name">Platform Name:</label>
+    <input type="text" name="name" required><br>
+    <button type="submit">Add Platform</button>
+</form>
+<h3>Existing Platforms:</h3>
+<ul>
+    {% for platform in platforms %}
+        <li>{{ platform.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

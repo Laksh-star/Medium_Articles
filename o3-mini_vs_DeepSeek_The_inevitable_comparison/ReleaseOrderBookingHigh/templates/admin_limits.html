@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Discount and Outstanding Due Limits</h2>
+<form method="post">
+    <label for="discount_limit">Discount Limit (%):</label>
+    <input type="number" step="0.01" name="discount_limit" value="{{ discount.limit_percentage if discount else '' }}" required><br>
+    <label for="dues_threshold">Outstanding Dues Threshold:</label>
+    <input type="number" step="0.01" name="dues_threshold" value="{{ dues.threshold_amount if dues else '' }}" required><br>
+    <button type="submit">Update Limits</button>
+</form>
+{% endblock %}

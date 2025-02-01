@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Release Order Booking</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("ro-summary-text");
+            navigator.clipboard.writeText(copyText.innerText).then(function() {
+                alert("Copied to clipboard!");
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Release Order Booking Prototype</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('create_step1') }}">Create Release Order</a>
+            <a href="{{ url_for('admin_dashboard') }}">Admin</a>
+        </nav>
+    </header>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <p>&copy; 2023 ReleaseOrderBooking Prototype</p>
+    </footer>
+</body>
+</html>

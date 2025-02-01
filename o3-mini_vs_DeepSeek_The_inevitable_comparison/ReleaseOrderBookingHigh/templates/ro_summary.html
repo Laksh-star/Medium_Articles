@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Release Order Summary</h2>
+<div id="ro-summary-text">
+    <p><strong>Client Name:</strong> {{ data.client_name }}</p>
+    <p><strong>Client Type:</strong> {{ data.client_type }}</p>
+    <p><strong>Client Contact:</strong> {{ data.client_contact }}</p>
+    <p><strong>Outstanding Due:</strong> {{ data.outstanding_due }}</p>
+    <p><strong>Campaign Name:</strong> {{ data.campaign_name }}</p>
+    <p><strong>Ad Type:</strong> {{ data.ad_type }}</p>
+    <p><strong>Ad Platform:</strong> {{ data.ad_platform }}</p>
+    <p><strong>Inventory Slot:</strong> {{ data.inventory_slot }}</p>
+    <p><strong>Discount:</strong> {{ data.discount }}%</p>
+</div>
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+<a href="{{ url_for('create_pdf') }}"><button type="button">Download PDF</button></a>
+<form method="post">
+    <button type="submit">Confirm and Submit Release Order</button>
+</form>
+{% endblock %}

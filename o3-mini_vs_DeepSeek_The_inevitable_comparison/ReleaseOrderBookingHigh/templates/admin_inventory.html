@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Inventory Slots</h2>
+<form method="post">
+    <label for="slot_name">Slot Name:</label>
+    <input type="text" name="slot_name" required><br>
+    <label for="available_quantity">Available Quantity:</label>
+    <input type="number" name="available_quantity" required><br>
+    <button type="submit">Add Inventory Slot</button>
+</form>
+<h3>Existing Inventory Slots:</h3>
+<ul>
+    {% for slot in inventory_slots %}
+        <li>{{ slot.slot_name }} - Available: {{ slot.available_quantity }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

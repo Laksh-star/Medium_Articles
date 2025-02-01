@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Step 3: Ad Details</h2>
+<form method="post">
+    <label for="ad_type">Ad Type:</label>
+    <select id="ad_type" name="ad_type">
+        {% for type in ad_types %}
+            <option value="{{ type.name }}">{{ type.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="ad_platform">Ad Platform:</label>
+    <select id="ad_platform" name="ad_platform">
+        {% for platform in platforms %}
+            <option value="{{ platform.name }}">{{ platform.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="inventory_slot">Inventory Slot:</label>
+    <select id="inventory_slot" name="inventory_slot">
+        {% for slot in inventory_slots %}
+            <option value="{{ slot.slot_name }}">{{ slot.slot_name }} (Available: {{ slot.available_quantity }})</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="discount">Discount (%):</label>
+    <input type="number" step="0.01" id="discount" name="discount" required><br>
+    <p>Maximum Allowed Discount: {{ discount_limit }}%</p>
+
+    <button type="submit">Review Summary</button>
+</form>
+{% endblock %}

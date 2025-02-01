@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Manage Clients/Agencies</h2>
+<form method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required><br>
+    <label for="client_type">Type:</label>
+    <select name="client_type">
+        <option value="Client">Client</option>
+        <option value="Agency">Agency</option>
+    </select><br>
+    <label for="contact">Contact:</label>
+    <input type="text" name="contact" required><br>
+    <button type="submit">Add Client</button>
+</form>
+<h3>Existing Clients:</h3>
+<ul>
+    {% for client in clients %}
+        <li>{{ client.name }} - {{ client.type }} - {{ client.contact }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

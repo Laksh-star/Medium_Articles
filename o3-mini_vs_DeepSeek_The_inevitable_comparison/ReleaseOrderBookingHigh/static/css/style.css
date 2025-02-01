@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+form label {
+    display: inline-block;
+    width: 150px;
+}
+
+form input, form select {
+    margin-bottom: 10px;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.flashes li.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flashes li.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes li.info {
+    background-color: #cce5ff;
+    color: #004085;
+}

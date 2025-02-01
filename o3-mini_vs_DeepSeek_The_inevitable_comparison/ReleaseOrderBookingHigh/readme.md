@@ -83,15 +83,7 @@ ReleaseOrderBooking/
    pip install -r requirements.txt
    ```
 
-4. Initialize the database:
-   ```bash
-   python
-   >>> from app import init_db
-   >>> init_db()
-   >>> exit()
-   ```
-
-5. Run the application:
+4. Run the application:
    ```bash
    python app.py
    ```

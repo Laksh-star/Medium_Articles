@@ -1,4 +1,4 @@
-# Chat Analysis Dashboard
+# Claude.ai Chat Analysis Dashboard
 
 A comprehensive Python tool for analyzing chat conversations with AI assistants, providing insights into interaction patterns, task categories, and usage statistics.
 
@@ -60,21 +60,6 @@ sample_df.to_json('sample_conversations.json', orient='records')
 The tool expects two JSON files:
 - `users.json`: Contains user information
 - `conversations.json`: Contains the chat conversations
-
-To run the analysis:
-
-```python
-from chat_analyzer import load_user_data, load_and_process_chats, analyze_chats
-
-# Load data
-users_df = load_user_data('users.json')
-df = load_and_process_chats('conversations.json', users_df)
-
-# Run analysis
-results = analyze_chats(df)
-print_statistics(results)
-plt.show()
-```
 
 ### Validation Samples
 The tool includes functionality to save sample conversations for validation:
@@ -163,10 +148,6 @@ The tool generates a comprehensive dashboard with six main visualizations:
 4. Message Length by Task Type
 5. Daily Activity Timeline
 6. Message Length Comparison (Human vs Assistant)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 

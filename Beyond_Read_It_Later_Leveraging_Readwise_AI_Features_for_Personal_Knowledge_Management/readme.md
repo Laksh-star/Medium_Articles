@@ -94,7 +94,7 @@ Parameters:
 
 The generated newsletter will look like this:
 
-![Newsletter Example](https://github.com/yourusername/Medium_Articles/raw/main/Beyond_Read_It_Later_Leveraging_Readwise_AI_Features_for_Personal_Knowledge_Management/newsletter_example.png)
+![Newsletter Example](https://github.com/Laksh-star/Medium_Articles/raw/main/Beyond_Read_It_Later_Leveraging_Readwise_AI_Features_for_Personal_Knowledge_Management/newsletter_example.png)
 
 ## About Personal Knowledge Management with Readwise
 

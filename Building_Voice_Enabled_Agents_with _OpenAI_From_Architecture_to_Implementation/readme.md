@@ -42,7 +42,7 @@
 
 ## 🧬 Architecture Overview
 
-![Voice Pipeline](./voice_pipeline.png)
+![Voice Pipeline](./voice_pipeline.jepg)
 
 **Voice Pipeline Flow:**
 1. Audio input (uploaded file)
@@ -109,7 +109,7 @@
 
 ## 📚 References
 
-- [🔗 OpenAI Agents SDK](https://platform.openai.com/docs/assistants/overview)
+- [🔗 OpenAI Agents SDK](https://platform.openai.com/docs/guides/agents)
 - [🔗 Gradio Documentation](https://www.gradio.app/guides/)
 - [🔗 Arize Phoenix for Tracing](https://docs.arize.com/phoenix/)
 - [🔗 Related Article on Medium](https://medium.com/@LakshmiNarayana_U/beyond-assistants-developing-autonomous-workflows-with-openais-agents-sdk-0eaa0420ffa3)

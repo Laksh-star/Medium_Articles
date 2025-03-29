@@ -42,7 +42,7 @@
 
 ## 🧬 Architecture Overview
 
-![Voice Pipeline](./voice_pipeline.jepg)
+![Voice Pipeline](./voice_pipeline.jpeg)
 
 **Voice Pipeline Flow:**
 1. Audio input (uploaded file)

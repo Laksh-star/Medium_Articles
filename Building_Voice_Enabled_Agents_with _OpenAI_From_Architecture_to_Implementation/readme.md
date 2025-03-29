@@ -91,11 +91,11 @@
 ## 📁 Project Structure
 
 ```
-├── samples/                          # Sample voice files (your own voice)
-│   ├── divorce_question_en.mp3
-│   ├── harassment_te.mp3
-│   ├── tenant_dispute_hi.mp3
-│   └── consumer_fraud_ta.mp3
+├── samples/                          # Sample voice files (own voice) and model outputs
+│   ├── Urdu_divorce.mp3
+│   ├── owner_tenant_issue.mp3
+│   ├── owner_tenant_issue_response.mp3
+│   └── urdu_divorce_response.mp3
 │   └── README.md                    # Usage notice + descriptions
 ├── interface_screenshot.jpeg        # Gradio UI
 ├── voice_pipeline.png               # Architecture diagram

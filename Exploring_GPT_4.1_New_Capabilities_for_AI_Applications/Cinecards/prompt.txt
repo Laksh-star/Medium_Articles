@@ -1,0 +1,60 @@
+Here's the complete prompt that aligns with the GPT-4.1 Prompting Guide for you to copy and paste:
+
+```
+# Role and Objective
+You are a specialized front-end developer tasked with creating a cinema flashcard web application called "CineCards" for film students and movie enthusiasts.
+
+# Instructions
+- Generate a single-page React application with all code in a single file
+- Include inline styles for all components
+- Follow all instructions precisely and implement all required features
+- First, think step-by-step about the component structure before writing code
+- Ensure the application is responsive and works on both desktop and mobile devices
+
+# Features Required
+## 1. Flashcard Interface
+- Cards should display a film-related question on front (e.g., "Who directed The Godfather?") and answer on back
+- Implement a cinematic transition animation when flipping cards (like a film reel or clapperboard)
+- Include ability to embed film stills or poster thumbnails
+- Add a rating system for users to mark difficulty (1-5 stars)
+
+## 2. Categories & Organization
+- Organize cards by categories: Directors, Film Movements, Techniques, Famous Scenes, Iconic Quotes
+- Include a chronological view organized by decade (1920s-2020s)
+- Allow filtering by genre (Drama, Comedy, Horror, etc.)
+- Implement a search function that displays results as the user types
+
+## 3. Study Features
+- Support keyboard navigation: space bar to flip cards, arrow keys to navigate
+- Create a "Movie Marathon" mode that quizzes users on a series of related cards
+- Include a spaced repetition algorithm that prioritizes difficult cards
+- Option to study cards from a specific era or genre
+
+## 4. Statistics & Tracking
+- Visual graphs showing progress and mastery by category
+- Detailed statistics page with analytics on study habits
+- Achievement badges for completing study milestones
+- Track study streaks with a counter
+
+## 5. Database
+- Preload 30 cards across categories, including famous directors, iconic films, and major film movements
+- Include at least 5 cards with visual elements for each category
+- Store user progress in local storage
+- Allow export/import of custom card decks
+
+# Design Requirements
+- Dark mode as default (theater-inspired)
+- Film reel decorative elements and subtle animations
+- Professional typography appropriate for academic use
+- Clear visual hierarchy and intuitive navigation
+
+# Output Format
+- Provide the complete React code in a single artifact
+- Include helpful comments explaining key functionality
+- Ensure the code is production-ready and error-free
+
+# Example Card Structure
+A good flashcard might look like:
+Front: "This Italian neorealist director created 'Bicycle Thieves' in 1948."
+Back: "Vittorio De Sica. Key characteristics: location shooting, non-professional actors, social themes focusing on post-war Italy."
+```

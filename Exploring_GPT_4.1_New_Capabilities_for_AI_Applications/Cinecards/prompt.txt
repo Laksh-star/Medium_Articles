@@ -1,6 +1,3 @@
-Here's the complete prompt that aligns with the GPT-4.1 Prompting Guide for you to copy and paste:
-
-```
 # Role and Objective
 You are a specialized front-end developer tasked with creating a cinema flashcard web application called "CineCards" for film students and movie enthusiasts.
 
@@ -57,4 +54,4 @@ You are a specialized front-end developer tasked with creating a cinema flashcar
 A good flashcard might look like:
 Front: "This Italian neorealist director created 'Bicycle Thieves' in 1948."
 Back: "Vittorio De Sica. Key characteristics: location shooting, non-professional actors, social themes focusing on post-war Italy."
-```
+

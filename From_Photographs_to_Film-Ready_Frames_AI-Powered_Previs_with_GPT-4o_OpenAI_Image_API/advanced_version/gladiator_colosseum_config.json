@@ -1,0 +1,38 @@
+{
+  "project_name": "Gladiator II: Colosseum Sequences",
+  "set_name": "Roman Colosseum",
+  "historical_period": "Ancient Rome, 2nd Century CE",
+  "reference_image_paths": [
+    "references/colosseum_exterior_1.jpg",
+    "references/colosseum_interior_1.jpg",
+    "references/colosseum_arena_floor.jpg",
+    "references/roman_architecture_details.jpg",
+    "references/historical_colosseum_reconstruction.jpg"
+  ],
+  "budget_constraints": {
+    "total_budget": 185000000,
+    "max_physical_budget": 12000000
+  },
+  "script_scenes": [
+    {
+      "id": "C12",
+      "title": "Gladiator Entrance",
+      "description": "MAXIMUS emerges from the dark hypogeum tunnel into the blinding sunlight of the arena. The enormous crowd ROARS as he squints and takes in the massive scale of the Colosseum. Senators in the imperial box look down with interest as MAXIMUS grips his gladius sword and shield, turning slowly to face his opponent across the blood-stained sand."
+    },
+    {
+      "id": "C24",
+      "title": "Emperor's Address",
+      "description": "The EMPEROR rises from his ornate seat in the imperial box, silencing the crowd with a raised hand. Golden eagles on standards flank him as he looks down upon MAXIMUS. The crowd leans forward, straining to hear his verdict over the occasional cry of an exotic beast waiting in the cages below."
+    },
+    {
+      "id": "C37",
+      "title": "Arena Battle",
+      "description": "Blood sprays across the sand as MAXIMUS dodges the trident of the RETIARIUS. They circle each other beneath the sweltering sun, the crowd's chants echoing off the towering walls. MAXIMUS stumbles against a wooden barricade, narrowly avoiding a killing blow, then rolls across the ground, grabbing a handful of sand to throw in his opponent's face."
+    },
+    {
+      "id": "C41",
+      "title": "Victory Moment",
+      "description": "Standing over his defeated opponent, MAXIMUS turns to the imperial box, bloodied and exhausted. 'ARE YOU NOT ENTERTAINED?' he roars, spinning in a circle with arms extended. The crowd erupts in deafening cheers as he throws his sword into the sand. From the upper tiers to the front rows, spectators bang their feet and call his name while guards eye him warily from the arena entrances."
+    }
+  ]
+}

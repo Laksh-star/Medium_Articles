@@ -2,6 +2,8 @@
 
 A tool for analyzing historical settings and optimizing film/TV production costs by determining what should be physically built versus created with CGI.
 
+⚠️ NOTE: This code is provided as a conceptual implementation only.
+
 ## Overview
 
 This system helps production teams make data-driven decisions about set construction by:

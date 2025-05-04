@@ -1,0 +1,18 @@
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+model_groups:
+  - id: rasa_command_generation_model  # Add this to match what config.yml expects
+    models:
+      - provider: openai
+        model: gpt-4o
+  
+  - id: openai_llm
+    models:
+      - provider: openai
+        model: gpt-4o
+  
+  - id: openai_embeddings
+    models:
+      - provider: openai
+        model: text-embedding-3-large

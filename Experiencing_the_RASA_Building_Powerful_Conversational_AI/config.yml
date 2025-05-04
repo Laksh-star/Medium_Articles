@@ -1,0 +1,22 @@
+recipe: default.v1
+language: en
+assistant_id: indian_spirituality_guide
+
+pipeline:
+  - name: NLUCommandAdapter
+  - name: CompactLLMCommandGenerator
+    llm:
+      model_group: openai_llm
+    flow_retrieval:
+      embeddings:
+        model_group: openai_embeddings
+    user_input:
+      max_characters: 500
+
+policies:
+  - name: FlowPolicy
+  #- name: EnterpriseSearchPolicy
+    vector_store:
+      type: faiss
+      index_path: spiritual_knowledge
+      threshold: 0.7

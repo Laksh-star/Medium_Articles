@@ -1,0 +1,43 @@
+version: "3.1"
+
+flows:
+  explore_concepts:
+    name: Explore spiritual concepts
+    description: Explain spiritual concepts from Indian philosophy such as dharma, karma, moksha, meditation, yoga, atman, brahman, etc.
+    nlu_trigger:
+      - intent: ask_concept
+      - intent: explain_concept
+    steps:
+      - collect: concept
+      - action: action_fetch_concept_info
+  
+  meditation_guide:
+    name: Meditation guide
+    description: Guide users through basic meditation techniques based on their experience level and available time. Help with meditation practices.
+    nlu_trigger:
+      - intent: ask_meditation
+      - intent: meditation_guide
+    steps:
+      - collect: experience_level
+      - collect: time_available
+      - action: action_suggest_meditation
+  
+  sacred_texts:
+    name: Explore sacred texts
+    description: Provide information about sacred texts in Indian spirituality such as Bhagavad Gita, Upanishads, Yoga Sutras, Vedas, etc.
+    nlu_trigger:
+      - intent: ask_sacred_text
+      - intent: sacred_text_info
+    steps:
+      - collect: sacred_text
+      - action: action_explore_sacred_text
+  
+  spiritual_practices:
+    name: Learn spiritual practices
+    description: Guide users on spiritual practices like mantra recitation, pranayama (breathing), yoga, japa, etc.
+    nlu_trigger:
+      - intent: ask_practice
+      - intent: spiritual_practice_guide
+    steps:
+      - collect: practice_type
+      - action: action_provide_spiritual_practice

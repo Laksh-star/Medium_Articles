@@ -1,0 +1,5 @@
+flows:
+  pattern_chitchat:
+    description: Handle casual conversation about spirituality
+    steps:
+      - action: utter_default_chitchat

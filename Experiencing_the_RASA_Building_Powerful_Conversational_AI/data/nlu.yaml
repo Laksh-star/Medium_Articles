@@ -1,0 +1,84 @@
+version: "3.1"
+
+nlu:
+- intent: ask_concept
+  examples: |
+    - What is dharma?
+    - Can you explain karma?
+    - Tell me about moksha
+    - What does atman mean?
+    - Explain brahman to me
+    - What are chakras?
+    - I want to learn about ahimsa
+    - What is the concept of samsara?
+    - Tell me about yoga philosophy
+
+- intent: explain_concept
+  examples: |
+    - I need an explanation of dharma
+    - Can you describe what karma is?
+    - I'd like to understand the meaning of moksha
+    - Please elaborate on the concept of atman
+    - I'm curious about brahman
+    - What is the significance of chakras?
+    - I want to understand ahimsa better
+    - Could you explain samsara in simple terms?
+
+- intent: ask_meditation
+  examples: |
+    - How do I meditate?
+    - Teach me meditation
+    - I want to learn how to meditate
+    - What's a good meditation technique?
+    - How can I start meditation?
+    - Tell me about meditation practices
+    - What's the best way to meditate?
+
+- intent: meditation_guide
+  examples: |
+    - I need guidance for meditation
+    - Can you guide me through a meditation?
+    - I'm looking for meditation instructions
+    - Help me with my meditation practice
+    - I'd like a meditation guide
+    - I'm a beginner in meditation
+    - What meditation is good for beginners?
+
+- intent: ask_sacred_text
+  examples: |
+    - Tell me about the Bhagavad Gita
+    - What are the Upanishads?
+    - I want to learn about the Yoga Sutras
+    - Explain the Vedas to me
+    - What's in the Bhagavad Gita?
+    - What are important sacred texts in Hinduism?
+    - Tell me about important Indian scriptures
+
+- intent: sacred_text_info
+  examples: |
+    - What does the Bhagavad Gita teach?
+    - What's the significance of the Upanishads?
+    - Key teachings of the Yoga Sutras
+    - What's the importance of the Vedas?
+    - I'm interested in Hindu sacred texts
+    - What are the main points of the Bhagavad Gita?
+
+- intent: ask_practice
+  examples: |
+    - How do I practice pranayama?
+    - Teach me mantra meditation
+    - How to do yoga properly?
+    - What is japa practice?
+    - How can I start practicing yoga?
+    - Tell me about breathing exercises
+    - How to use a mala for meditation?
+
+- intent: spiritual_practice_guide
+  examples: |
+    - I need guidance for pranayama
+    - Guide me through mantra recitation
+    - Help me start a yoga practice
+    - I want to learn japa meditation
+    - What's the right way to do pranayama?
+    - Can you teach me breathing techniques?
+    - How should I practice with a mala?

@@ -52,7 +52,7 @@ Each subfolder contains its own detailed documentation. Choose based on your nee
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/fact-checking-tools.git
+git clone https://github.com/Laksh-star/Medium_Articles/Real_Time_Fact_Checking_with_Claudes_Web_Search_API.git
 cd fact-checking-tools
 
 # Navigate to your chosen tool

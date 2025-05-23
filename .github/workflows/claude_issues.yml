@@ -1,0 +1,20 @@
+name: Claude Issue Response
+on:
+  issues:
+    types: [opened, edited, labeled]
+  issue_comment:
+    types: [created]
+jobs:
+  claude-respond:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Claude Code Action
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_prompt: |
+            If the issue is new or edited, analyze the issue description and provide a helpful response or triage suggestion.
+            If the issue comment mentions '@claude', respond to the comment with relevant assistance or code suggestions.

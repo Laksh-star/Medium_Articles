@@ -1,20 +1,18 @@
-name: Claude Issue Response
+name: Claude Issue Comment Response
 on:
-  issues:
-    types: [opened, edited, labeled]
   issue_comment:
     types: [created]
+permissions:
+  id-token: write  # Required for OIDC token access
+  issues: write    # Required for commenting on issues
+  pull-requests: write  # Optional, if Claude interacts with PRs
 jobs:
   claude-respond:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Run Claude Code Action
         uses: anthropics/claude-code-action@beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          direct_prompt: |
-            If the issue is new or edited, analyze the issue description and provide a helpful response or triage suggestion.
-            If the issue comment mentions '@claude', respond to the comment with relevant assistance or code suggestions.
+          direct_prompt: "Respond to comments mentioning '@claude' with relevant assistance or code suggestions."

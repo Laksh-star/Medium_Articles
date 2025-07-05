@@ -225,7 +225,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **GitHub Issues**: For bug reports and feature requests
 - **Medium Article**: [[Optimizing Multi-Agent Systems with DSPy: From Good to Great -A Complete Guide](https://medium.com/@LakshmiNarayana_U/optimizing-multi-agent-systems-with-dspy-from-good-to-great-a-complete-guide-a2a97443f8e6)]
-- **LinkedIn**: [[LinkedIn Profile](https://www.linkedin.com/in/laksh/)]
+- **LinkedIn**: [[LN Linkedin Profile](https://www.linkedin.com/in/laksh/)]
 
 ---
 

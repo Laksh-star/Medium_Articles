@@ -260,7 +260,7 @@ class DomainSpecificCompressor(ContextCompressionEngine):
 ## 📚 Related Resources
 
 - **LlamaIndex Documentation**: [https://docs.llamaindex.ai/](https://docs.llamaindex.ai/)
-- **Context Engineering Research**: Academic papers on RAG optimization
+- **Context Engineering Research**: To be added
 - **OpenAI API Guide**: [https://platform.openai.com/docs](https://platform.openai.com/docs)
 - **Medium Article**: [[From Prompt Engineering to Context Engineering: Building Smarter AI Systems with LlamaIndex](https://medium.com/@LakshmiNarayana_U/from-prompt-engineering-to-context-engineering-building-smarter-ai-systems-with-llamaindex-bb951bf16e42)]
 

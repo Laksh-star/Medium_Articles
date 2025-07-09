@@ -257,50 +257,18 @@ class DomainSpecificCompressor(ContextCompressionEngine):
         pass
 ```
 
-## 🤝 Contributing
-
-Contributions are welcome! Areas for improvement:
-
-- **New Data Sources**: Add support for additional APIs and databases
-- **Advanced Compression**: Implement LLM-based summarization techniques  
-- **Caching Systems**: Add intelligent caching for repeated queries
-- **Evaluation Metrics**: Develop benchmarks for context engineering quality
-- **UI Enhancement**: Build web interfaces for easier interaction
-
 ## 📚 Related Resources
 
 - **LlamaIndex Documentation**: [https://docs.llamaindex.ai/](https://docs.llamaindex.ai/)
 - **Context Engineering Research**: Academic papers on RAG optimization
 - **OpenAI API Guide**: [https://platform.openai.com/docs](https://platform.openai.com/docs)
-- **Medium Article**: [Link to accompanying blog post]
+- **Medium Article**: [[From Prompt Engineering to Context Engineering: Building Smarter AI Systems with LlamaIndex](https://medium.com/@LakshmiNarayana_U/from-prompt-engineering-to-context-engineering-building-smarter-ai-systems-with-llamaindex-bb951bf16e42)]
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
 
-- **LlamaIndex Team**: For the excellent RAG framework
-- **OpenAI**: For providing powerful language models
-- **arXiv**: For academic paper access
-- **Wikipedia**: For reliable background information
-- **Open Source Community**: For the amazing tools and libraries used
 
-## 🐛 Issues and Support
 
-If you encounter any issues:
 
-1. Check that all dependencies are installed correctly
-2. Verify your OpenAI API key (if using)
-3. Ensure internet connectivity for real-time data retrieval
-4. Open an issue on GitHub with error details and reproduction steps
-
-## ⭐ Star This Repository
-
-If you found this demo helpful for learning context engineering concepts, please star the repository to help others discover it!
-
----
-
-**Built with ❤️ for the AI/ML community**
-
-*This demo is part of a comprehensive guide to modern AI system design, moving beyond basic prompt engineering to sophisticated context management techniques.*

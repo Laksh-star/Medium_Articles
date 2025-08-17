@@ -1,6 +1,8 @@
 # Gemma 3 270M Medical Fine-tuning with Unsloth
 
 This repository contains a Jupyter notebook for fine-tuning Google's Gemma 3 270M model on medical data using the Unsloth framework.
+Colab notebook from Unsloth-->https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Gemma3_(270M).ipynb
+
 
 ## Overview
 
@@ -128,14 +130,6 @@ To adapt for other domains:
 3. **Tune Hyperparameters**: Modify LoRA config (Cell 3)
 4. **Change System Prompt**: Update medical assistant prompt
 
-## Contributing
-
-Feel free to submit issues and enhancement requests. Areas for improvement:
-
-- Evaluation on held-out medical datasets
-- Support for additional medical domains
-- Multi-language medical training
-- Clinical reasoning benchmarks
 
 ## License
 

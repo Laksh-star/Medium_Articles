@@ -9,14 +9,14 @@ It documents how simple vs. structured prompts change Gemini 3 + Nano Banana Pro
 - `nachiketa/`
   - `prompt-simple.txt` – baseline “entire story + legend” prompt (Prompt A)
   - `prompt-structured.txt` – role + constraints + scenes prompt (Prompt B)
-  - `output-simple.png` – dense, wall-chart style poster
-  - `output-structured.png` – vertical narrative journey poster
+  - `output-simple.jpeg` – dense, wall-chart style poster
+  - `output-structured.jpeg` – vertical narrative journey poster
 - `yayathi/`
-  - `prompt.txt` and `output.png` – multi-stage life transformation test
+  - `prompt.txt` and `output.jpeg` – multi-stage life transformation test
 - `garuda-purana/`
-  - `prompt.txt` and `output.png` – karma / afterlife visualization test
+  - `prompt.txt` and `output.jpeg` – karma / afterlife visualization test
 - `sabari/`
-  - `prompt.txt` and `output.png` – devotional mood and emotional composition test
+  - `prompt.txt` and `output.jpeg` – devotional mood and emotional composition test
 
 ## How to Use
 

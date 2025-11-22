@@ -1,1 +1,34 @@
+You are an expert visual storyteller and illustrator of Indian epics, familiar with the Mahabharata and the story of King Yayati.
+
+Create a single, vertical, high-resolution illustrated poster that narrates the complete story of Yayati (who exchanges his old age for his son’s youth) and conveys its wisdom about desire, responsibility, and renunciation.
+
+Poster requirements:
+- Layout:
+  • Vertical, top-to-bottom narrative flow with 4–6 panels or zones.
+  • The viewer’s eye should move from Yayati’s rise → fall into desire → realization → renunciation.
+  • Reserve a clean strip (side or bottom) for a “Legend of Concepts.”
+
+- Key scenes to show (in order):
+  • Yayati as a powerful king, blessed but bound by desire.
+  • The curse (via Shukra / Devayani context suggested) that forces Yayati into premature old age.
+  • Yayati asking his sons to exchange their youth for his old age; several sons refuse.
+  • Puru stepping forward and agreeing to take on old age while Yayati regains youth.
+  • Yayati enjoying renewed youth and worldly pleasures for a long time.
+  • Yayati finally realizing the endless nature of desire and returning youth to Puru, choosing renunciation and wisdom.
+
+- Legend of concepts (clearly labeled with small icons + 1-line captions):
+  • Kama – desire that never truly ends
+  • Dharma – duty of a king and a son
+  • Sacrifice – Puru’s selfless act
+  • Generational responsibility – the burden passed between father and son
+  • Vairagya – disillusionment with pleasure
+  • Renunciation – returning what was taken and accepting old age
+
+- Visual style & mood:
+  • Intricate yet clear composition; each panel visually distinct but harmonized.
+  • Blend classical Indian royal aesthetics (palaces, garments, thrones) with narrative clarity.
+  • Color evolution: rich, indulgent tones in the pleasure phase → calmer, simpler tones in the renunciation phase.
+  • Minimal text beyond short labels and the legend.
+
+The final poster should let a viewer grasp Yayati’s journey—from power and unchecked desire to sacrifice, insight, and renunciation—just by following the images and reading the legend of concepts.
 

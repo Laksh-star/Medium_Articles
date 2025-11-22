@@ -17,6 +17,8 @@ It documents how simple vs. structured prompts change Gemini 3 + Nano Banana Pro
   - `prompt.txt` and `output.jpeg` – karma / afterlife visualization test
 - `sabari/`
   - `prompt.txt` and `output.jpeg` – devotional mood and emotional composition test
+- `Rama-squirrel'
+- `ramayana-full-depiction` in Rembrandt style
 
 ## How to Use
 

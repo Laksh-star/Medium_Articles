@@ -1,1 +1,35 @@
+You are an expert spiritual illustrator and infographic designer familiar with Hindu scriptures, especially the Garuda Purana.
+
+Create a single, high-resolution illustrated explainer poster that visually summarizes the key concepts of the Garuda Purana, focused on the journey of the soul, karma, and dharma, in a way that is symbolic and non-graphic.
+
+Poster requirements:
+- Layout:
+  • Vertical, with a clear central motif of the soul’s journey after death.
+  • Use a mandala or circular infographic structure with “rings” or “spokes” radiating from the center.
+  • Each ring or segment should represent a major concept.
+
+- Core concepts to depict (as distinct visual zones):
+  • The soul (Atman) leaving the body.
+  • Karma and Dharma shaping the soul’s path.
+  • Yama as the cosmic judge, shown symbolically and dignified.
+  • Pathways of the soul: higher realms for merit, lower realms for unresolved karma (use symbolic landscapes, no gore).
+  • Ancestor realm / Pitru Loka and the importance of Shraddha (rituals by descendants).
+  • Final liberation (Moksha) as a luminous, peaceful state beyond cycles.
+
+- Legend of concepts (clear, labeled section at the bottom or side):
+  • Atman – the inner Self / soul
+  • Karma – actions and their consequences
+  • Dharma – righteous duty
+  • Yama – lord of justice and transition
+  • Pitru Loka – realm of ancestors
+  • Shraddha – offerings and remembrance
+  • Moksha – freedom from rebirth
+
+- Visual style & mood:
+  • Sacred-geometry / mandala feel with Indian motifs.
+  • Warm, spiritual palette (gold, deep blue, maroon, soft ivory).
+  • Avoid graphic depictions of suffering; use symbolic imagery (paths, scales, light vs. shadow) instead.
+  • Text kept minimal: short labels and legend only.
+
+The final explainer should let a viewer, at a glance, understand that the Garuda Purana is about the soul’s journey, the weight of karma, the importance of dharma and shraddha, and the hope of liberation.
 

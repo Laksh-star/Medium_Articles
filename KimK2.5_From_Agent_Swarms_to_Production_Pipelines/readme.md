@@ -72,30 +72,3 @@ MOONSHOT_API_KEY=... OPENROUTER_API_KEY=... \
 python video_full_pipeline.py --video "inputs/your_video.mp4" --context "Short context"
 ```
 
----
-
-## Suggested Repo Files to Include
-
-Core:
-- `main.py`
-- `openrouter_client.py`
-- `video_processor.py`
-- `config.py`
-- `requirements.txt`
-- `.env.example`
-- `.gitignore`
-
-Pipelines:
-- `video_processor_kimi_video.py`
-- `video_analysis_to_docs.py`
-- `video_full_pipeline.py`
-- `video_full_pipeline_moonshot.py`
-- `video_full_pipeline_moonshot_single_prompt.py`
-
-Docs:
-- `README.md` (this file)
-- `TRY_OUT_GUIDE.md`
-- `APPROACH.md`
-- `TESTING_NOTES.md`
-- `SESSION_REPORT.md`
-

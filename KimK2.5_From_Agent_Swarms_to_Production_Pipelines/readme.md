@@ -99,8 +99,3 @@ Docs:
 - `TESTING_NOTES.md`
 - `SESSION_REPORT.md`
 
----
-
-## Notes
-- Do not commit `.env` or any `output/` folders.
-- If HTML output renders as plain text, check the raw file and re-run.

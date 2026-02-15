@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Search - Agent Ready</title>
+  <style>
+    /* Optional: Style for when agent activates the form */
+    form:tool-form-active {
+      border: 2px solid #4285f4;
+      background: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Flights</h1>
+  
+  <!-- The WebMCP-enabled form -->
+  <form 
+    action="/api/search-flights" 
+    method="post"
+    toolname="searchFlights"
+    tooldescription="Search for available flights by origin, destination, and travel dates. Returns structured results with prices and times.">
+    
+    <label for="origin">From (Origin Airport):</label>
+    <input 
+      type="text" 
+      id="origin" 
+      name="origin" 
+      placeholder="e.g., JFK" 
+      required
+      toolparamdescription="IATA airport code for departure (e.g., NYC, LAX)">
+    
+    <label for="destination">To (Destination Airport):</label>
+    <input 
+      type="text" 
+      id="destination" 
+      name="destination" 
+      placeholder="e.g., LHR" 
+      required
+      toolparamdescription="IATA airport code for arrival">
+    
+    <label for="departure">Departure Date:</label>
+    <input 
+      type="date" 
+      id="departure" 
+      name="departure" 
+      required
+      toolparamdescription="Date of outbound flight in YYYY-MM-DD format">
+    
+    <label for="return">Return Date (optional):</label>
+    <input 
+      type="date" 
+      id="return" 
+      name="return"
+      toolparamdescription="Date of return flight (leave blank for one-way)">
+    
+    <button type="submit">Search Flights</button>
+  </form>
+
+  <script>
+    // Optional: Listen for agent interactions
+    document.addEventListener('webmcp:toolinvoked', (event) => {
+      if (event.detail.toolName === 'searchFlights') {
+        console.log('Agent is using the flight search tool!');
+        // You can customize behavior here, e.g., show a confirmation
+      }
+    });
+  </script>
+</body>
+</html>

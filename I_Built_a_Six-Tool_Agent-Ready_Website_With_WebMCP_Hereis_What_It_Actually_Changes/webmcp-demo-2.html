@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebMCP Travel Hub — Agent-Ready Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0f14;
+      --surface: #151921;
+      --surface-2: #1c2230;
+      --border: #2a3140;
+      --border-glow: #3b82f620;
+      --text: #e2e8f0;
+      --text-muted: #8892a4;
+      --text-dim: #5a6478;
+      --accent: #3b82f6;
+      --accent-glow: #3b82f640;
+      --green: #22c55e;
+      --green-glow: #22c55e30;
+      --amber: #f59e0b;
+      --amber-glow: #f59e0b30;
+      --red: #ef4444;
+      --red-glow: #ef444430;
+      --purple: #a78bfa;
+      --purple-glow: #a78bfa30;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      background: linear-gradient(180deg, #10141b 0%, var(--bg) 100%);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-size: 18px;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .logo-text { font-weight: 700; font-size: 18px; letter-spacing: -0.3px; }
+    .logo-text span { color: var(--accent); }
+
+    .badge-row { display: flex; gap: 8px; align-items: center; }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge-webmcp { background: var(--accent-glow); color: var(--accent); border: 1px solid #3b82f630; }
+    .badge-canary { background: var(--amber-glow); color: var(--amber); border: 1px solid #f59e0b30; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 32px 32px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: var(--text-muted); font-size: 16px; max-width: 700px; }
+
+    /* ── LAYOUT ── */
+    .main { max-width: 1200px; margin: 0 auto; padding: 0 32px 64px; }
+
+    /* ── SECTION HEADERS ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+    }
+    .section-num {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section-num.blue { background: var(--accent-glow); color: var(--accent); }
+    .section-num.green { background: var(--green-glow); color: var(--green); }
+    .section-num.purple { background: var(--purple-glow); color: var(--purple); }
+    .section-num.amber { background: var(--amber-glow); color: var(--amber); }
+    .section-title { font-size: 18px; font-weight: 600; }
+    .section-subtitle { color: var(--text-muted); font-size: 13px; margin-left: auto; }
+
+    /* ── BEFORE/AFTER COMPARISON ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .compare-card.old::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), #f97316);
+    }
+    .compare-card.new::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--accent));
+    }
+    .compare-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .compare-card.old .compare-label { color: var(--red); }
+    .compare-card.new .compare-label { color: var(--green); }
+    .compare-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .compare-card p { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+
+    .flow-steps {
+      display: flex;
+      gap: 6px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .flow-step {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .flow-arrow { color: var(--text-dim); font-size: 12px; display: grid; place-items: center; }
+
+    /* ── TOOL CARDS ── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .tool-card:hover {
+      border-color: #3b82f640;
+      box-shadow: 0 0 30px var(--border-glow);
+    }
+    .tool-card.full-width { grid-column: 1 / -1; }
+
+    .tool-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 5px;
+      margin-bottom: 14px;
+    }
+    .tool-tag.declarative { background: var(--accent-glow); color: var(--accent); }
+    .tool-tag.imperative { background: var(--purple-glow); color: var(--purple); }
+
+    .tool-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    /* ── FORM STYLES ── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .form-grid.three-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 4px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 70px; }
+
+    .submit-btn {
+      margin-top: 16px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .submit-btn.green { background: var(--green); }
+    .submit-btn.purple { background: #7c3aed; }
+
+    /* ── IMPERATIVE DEMO SECTION ── */
+    .imperative-demo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .demo-controls { display: flex; flex-direction: column; gap: 12px; }
+    .demo-btn {
+      padding: 10px 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .demo-btn:hover {
+      border-color: var(--purple);
+      background: var(--purple-glow);
+    }
+    .demo-btn .icon { font-size: 16px; }
+    .demo-btn .label { font-weight: 500; }
+    .demo-btn .desc { font-size: 11px; color: var(--text-muted); }
+
+    /* ── CODE BLOCK ── */
+    .code-block {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #161b22;
+      border-bottom: 1px solid var(--border);
+    }
+    .code-filename {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .code-lang {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--purple-glow);
+      color: var(--purple);
+      text-transform: uppercase;
+    }
+    .code-body {
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.7;
+      overflow-x: auto;
+      color: #c9d1d9;
+    }
+    .code-body .kw { color: #ff7b72; }
+    .code-body .str { color: #a5d6ff; }
+    .code-body .fn { color: #d2a8ff; }
+    .code-body .cm { color: #8b949e; }
+    .code-body .prop { color: #79c0ff; }
+    .code-body .num { color: #f2cc60; }
+
+    /* ── AGENT LOG ── */
+    .agent-log {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .agent-log-header {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--green-glow); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
+    }
+    .agent-log-title { font-size: 12px; font-weight: 600; }
+    .agent-log-body {
+      padding: 12px 16px;
+      max-height: 320px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .log-entry {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.6;
+      padding: 6px 10px;
+      border-radius: 6px;
+      animation: logFadeIn 0.3s ease-out;
+    }
+    @keyframes logFadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .log-entry.discover { background: var(--accent-glow); color: var(--accent); }
+    .log-entry.invoke { background: var(--green-glow); color: var(--green); }
+    .log-entry.result { background: var(--surface-2); color: var(--text-muted); }
+    .log-entry.error { background: var(--red-glow); color: var(--red); }
+    .log-entry.info { background: var(--amber-glow); color: var(--amber); }
+    .log-time { color: var(--text-dim); margin-right: 6px; }
+
+    /* ── AGENT-INVOKED TOAST ── */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toast {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      animation: toastIn 0.4s ease-out, toastOut 0.3s 3s ease-in forwards;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      min-width: 300px;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes toastOut {
+      from { opacity: 1; }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+    .toast-icon {
+      width: 28px; height: 28px;
+      border-radius: 7px;
+      display: grid; place-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .toast-icon.blue { background: var(--accent-glow); }
+    .toast-icon.green { background: var(--green-glow); }
+    .toast-icon.purple { background: var(--purple-glow); }
+    .toast-text strong { display: block; font-size: 12px; }
+    .toast-text span { font-size: 11px; color: var(--text-muted); }
+
+    /* ── TOOL FORM ACTIVE STATE ── */
+    .tool-card.agent-active {
+      border-color: var(--green) !important;
+      box-shadow: 0 0 40px var(--green-glow) !important;
+    }
+    .tool-card.agent-active::after {
+      content: '🤖 Agent Active';
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: var(--green-glow);
+      color: var(--green);
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left { font-size: 12px; color: var(--text-dim); }
+    .footer-left a { color: var(--accent); text-decoration: none; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .compare-grid, .tools-grid, .imperative-demo, .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">✈</div>
+        <div class="logo-text">Travel<span>Hub</span></div>
+      </div>
+      <div class="badge-row">
+        <span class="badge badge-webmcp">WebMCP Enabled</span>
+        <span class="badge badge-canary">Chrome 146+</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>An <span class="gradient">Agent-Ready</span> Travel Website</h1>
+    <p>This demo exposes structured tools to AI agents via WebMCP — both the Declarative API (HTML form attributes) and the Imperative API (JavaScript). No screen scraping. No pixel guessing.</p>
+  </section>
+
+  <main class="main">
+
+    <!-- ━━━ SECTION 1: BEFORE / AFTER ━━━ -->
+    <div class="section-header">
+      <div class="section-num amber">1</div>
+      <div class="section-title">Before vs. After WebMCP</div>
+      <div class="section-subtitle">How agents interact with the web</div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card old">
+        <div class="compare-label">❌ Without WebMCP — Fragile</div>
+        <h3>Screenshot → Vision Model → Guess → Click</h3>
+        <p>Agents take screenshots, send them to a vision model, parse pixel coordinates of buttons and fields, then simulate mouse clicks and keyboard input. Breaks when UI changes.</p>
+        <div class="flow-steps">
+          <div class="flow-step">📸 Screenshot</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🧠 Vision LLM</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🎯 Parse coords</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🖱️ Simulate click</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🤞 Hope it works</div>
+        </div>
+      </div>
+
+      <div class="compare-card new">
+        <div class="compare-label">✅ With WebMCP — Structured</div>
+        <h3>Discover Tool → Read Schema → Call Function</h3>
+        <p>Agents discover declared tools with defined schemas, pass structured parameters, and receive typed responses. Stable even when the visual UI is redesigned.</p>
+        <div class="flow-steps">
+          <div class="flow-step">🔍 Discover tools</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">📋 Read schema</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">⚡ Call function</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">✅ Get response</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ━━━ SECTION 2: DECLARATIVE API ━━━ -->
+    <div class="section-header">
+      <div class="section-num blue">2</div>
+      <div class="section-title">Declarative API — HTML Form Attributes</div>
+      <div class="section-subtitle">toolname · tooldescription · toolparamdescription</div>
+    </div>
+
+    <div class="tools-grid">
+      <!-- TOOL 1: Flight Search -->
+      <div class="tool-card" id="flightCard">
+        <div class="tool-tag declarative">⬡ Declarative</div>
+        <h3>searchFlights</h3>
+        <p class="tool-desc">Search for available flights by origin, destination, and travel dates.</p>
+
+        <form 
+          action="/api/search-flights" 
+          method="post"
+          toolname="searchFlights"
+          tooldescription="Search for available flights by origin, destination, and travel dates. Returns structured results with prices and times."
+          onsubmit="handleFlightSearch(event)">
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="origin">From (Origin)</label>
+              <input type="text" id="origin" name="origin" placeholder="JFK" required
+                     toolparamdescription="IATA airport code for departure (e.g., JFK, LAX)">
+            </div>
+            <div class="form-group">
+              <label for="destination">To (Destination)</label>
+              <input type="text" id="destination" name="destination" placeholder="LHR" required
+                     toolparamdescription="IATA airport code for arrival (e.g., LHR, NRT)">
+            </div>
+            <div class="form-group">
+              <label for="departure">Departure Date</label>
+              <input type="date" id="departure" name="departure" required
+                     toolparamdescription="Date of outbound flight in YYYY-MM-DD format">
+            </div>
+            <div class="form-group">
+              <label for="returnDate">Return Date</label>
+              <input type="date" id="returnDate" name="return"
+                     toolparamdescription="Date of return flight (leave blank for one-way)">
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Search Flights</button>
+        </form>
+      </div>
+
+      <!-- TOOL 2: Hotel Booking -->
+      <div class="tool-card" id="hotelCard">
+        <div class="tool-tag declarative">⬡ Declarative</div>
+        <h3>searchHotels</h3>
+        <p class="tool-desc">Find hotels by city, check-in/check-out dates, and guest count.</p>
+
+        <form 
+          action="/api/search-hotels" 
+          method="post"
+          toolname="searchHotels"
+          tooldescription="Search for available hotels by city, check-in and check-out dates, and number of guests. Returns hotels with ratings, prices, and availability."
+          onsubmit="handleHotelSearch(event)">
+          
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="London" required
+                     toolparamdescription="City name for hotel search">
+            </div>
+            <div class="form-group">
+              <label for="checkin">Check-in</label>
+              <input type="date" id="checkin" name="checkin" required
+                     toolparamdescription="Check-in date in YYYY-MM-DD format">
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out</label>
+              <input type="date" id="checkout" name="checkout" required
+                     toolparamdescription="Check-out date in YYYY-MM-DD format">
+            </div>
+            <div class="form-group full">
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests"
+                      toolparamdescription="Number of guests (1-4)">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn green">Search Hotels</button>
+        </form>
+      </div>
+
+      <!-- TOOL 3: Support Ticket (declarative, full width) -->
+      <div class="tool-card full-width" id="supportCard">
+        <div class="tool-tag declarative">⬡ Declarative</div>
+        <h3>createSupportTicket</h3>
+        <p class="tool-desc">File a customer support ticket with category, priority, and description.</p>
+
+        <form 
+          action="/api/support-tickets" 
+          method="post"
+          toolname="createSupportTicket"
+          tooldescription="Create a customer support ticket. Agent can file tickets on behalf of the user with a category, priority level, and detailed description."
+          onsubmit="handleSupportTicket(event)">
+          
+          <div class="form-grid three-col">
+            <div class="form-group">
+              <label for="ticket-category">Category</label>
+              <select id="ticket-category" name="category" required
+                      toolparamdescription="Ticket category: booking, refund, baggage, other">
+                <option value="">Select...</option>
+                <option value="booking">Booking Issue</option>
+                <option value="refund">Refund Request</option>
+                <option value="baggage">Baggage Claim</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ticket-priority">Priority</label>
+              <select id="ticket-priority" name="priority"
+                      toolparamdescription="Ticket priority level: low, medium, high, urgent">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ticket-booking">Booking Ref</label>
+              <input type="text" id="ticket-booking" name="bookingRef" placeholder="BK-12345"
+                     toolparamdescription="Optional booking reference number">
+            </div>
+            <div class="form-group full">
+              <label for="ticket-desc">Description</label>
+              <textarea id="ticket-desc" name="description" placeholder="Describe your issue..." required
+                        toolparamdescription="Detailed description of the support issue"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn purple">Submit Ticket</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ━━━ SECTION 3: IMPERATIVE API ━━━ -->
+    <div class="section-header">
+      <div class="section-num purple">3</div>
+      <div class="section-title">Imperative API — JavaScript Tool Registration</div>
+      <div class="section-subtitle">navigator.modelContext.registerTool()</div>
+    </div>
+
+    <div class="imperative-demo">
+      <!-- Left: Buttons to simulate agent calling imperative tools -->
+      <div>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+          These tools are registered dynamically via JavaScript. Click to simulate an agent invoking them.
+        </p>
+        <div class="demo-controls">
+          <button class="demo-btn" onclick="simulateConvertCurrency()">
+            <span class="icon">💱</span>
+            <div>
+              <div class="label">convertCurrency</div>
+              <div class="desc">Convert between currencies with live rates</div>
+            </div>
+          </button>
+          <button class="demo-btn" onclick="simulateGetWeather()">
+            <span class="icon">🌤️</span>
+            <div>
+              <div class="label">getDestinationWeather</div>
+              <div class="desc">Get weather forecast for a travel destination</div>
+            </div>
+          </button>
+          <button class="demo-btn" onclick="simulateGetVisaInfo()">
+            <span class="icon">🛂</span>
+            <div>
+              <div class="label">getVisaRequirements</div>
+              <div class="desc">Check visa requirements for a nationality + destination</div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Code showing registration -->
+        <div class="code-block" style="margin-top:16px;">
+          <div class="code-header">
+            <span class="code-filename">imperative-tools.js</span>
+            <span class="code-lang">JavaScript</span>
+          </div>
+          <div class="code-body">
+<span class="cm">// Register a currency conversion tool</span>
+<span class="kw">if</span> (<span class="str">'modelContext'</span> <span class="kw">in</span> navigator) {
+  navigator.modelContext.<span class="fn">registerTool</span>({
+    <span class="prop">name</span>: <span class="str">'convertCurrency'</span>,
+    <span class="prop">description</span>: <span class="str">'Convert amount between currencies'</span>,
+    <span class="prop">inputSchema</span>: {
+      <span class="prop">type</span>: <span class="str">'object'</span>,
+      <span class="prop">properties</span>: {
+        <span class="prop">amount</span>: { <span class="prop">type</span>: <span class="str">'number'</span> },
+        <span class="prop">from</span>:   { <span class="prop">type</span>: <span class="str">'string'</span> },
+        <span class="prop">to</span>:     { <span class="prop">type</span>: <span class="str">'string'</span> }
+      },
+      <span class="prop">required</span>: [<span class="str">'amount'</span>, <span class="str">'from'</span>, <span class="str">'to'</span>]
+    },
+    <span class="prop">execute</span>: <span class="kw">async</span> (input, client) => {
+      <span class="kw">const</span> rate = <span class="kw">await</span> <span class="fn">fetchRate</span>(input.from, input.to);
+      <span class="kw">return</span> { converted: input.amount * rate, rate };
+    }
+  });
+}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Live agent log -->
+      <div>
+        <div class="agent-log">
+          <div class="agent-log-header">
+            <div class="pulse-dot"></div>
+            <div class="agent-log-title">Agent Activity Log</div>
+          </div>
+          <div class="agent-log-body" id="agentLog">
+            <div class="log-entry info">
+              <span class="log-time">--:--:--</span>
+              Waiting for agent interactions...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ━━━ SECTION 4: SOURCE CODE REFERENCE ━━━ -->
+    <div class="section-header">
+      <div class="section-num green">4</div>
+      <div class="section-title">Declarative API — Annotated HTML Source</div>
+      <div class="section-subtitle">The 3 attributes that make a form agent-ready</div>
+    </div>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">flight-form.html</span>
+        <span class="code-lang">HTML</span>
+      </div>
+      <div class="code-body">
+&lt;<span class="kw">form</span>
+  <span class="prop">action</span>=<span class="str">"/api/search-flights"</span>
+  <span class="prop">method</span>=<span class="str">"post"</span>
+  <span class="prop">toolname</span>=<span class="str">"searchFlights"</span>                        <span class="cm">&lt;!-- Tool identifier --&gt;</span>
+  <span class="prop">tooldescription</span>=<span class="str">"Search for available flights     <span class="cm">&lt;!-- What it does --&gt;</span>
+    by origin, destination, and travel dates."</span>&gt;
+
+  &lt;<span class="kw">input</span>
+    <span class="prop">name</span>=<span class="str">"origin"</span>
+    <span class="prop">type</span>=<span class="str">"text"</span>
+    <span class="prop">required</span>
+    <span class="prop">toolparamdescription</span>=<span class="str">"IATA airport code    <span class="cm">&lt;!-- Schema hint --&gt;</span>
+      for departure (e.g., JFK, LAX)"</span>&gt;
+
+  &lt;<span class="kw">input</span>
+    <span class="prop">name</span>=<span class="str">"destination"</span>
+    <span class="prop">type</span>=<span class="str">"text"</span>
+    <span class="prop">required</span>
+    <span class="prop">toolparamdescription</span>=<span class="str">"IATA airport code
+      for arrival"</span>&gt;
+
+  &lt;<span class="kw">input</span>
+    <span class="prop">name</span>=<span class="str">"departure"</span>
+    <span class="prop">type</span>=<span class="str">"date"</span>
+    <span class="prop">required</span>
+    <span class="prop">toolparamdescription</span>=<span class="str">"Outbound flight date
+      in YYYY-MM-DD format"</span>&gt;
+
+  &lt;<span class="kw">button</span> <span class="prop">type</span>=<span class="str">"submit"</span>&gt;Search Flights&lt;/<span class="kw">button</span>&gt;
+&lt;/<span class="kw">form</span>&gt;
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      WebMCP Demo by <a href="https://medium.com/@paborobotics" target="_blank">Lakshmi Narayana</a> · Directing Business Advisory
+    </div>
+    <div class="footer-links">
+      <a href="https://developer.chrome.com/blog/webmcp-epp" target="_blank">Chrome Blog</a>
+      <a href="https://github.com/nicolezhangyt/webmcp" target="_blank">W3C Spec</a>
+      <a href="https://webmcp.link/" target="_blank">WebMCP Docs</a>
+    </div>
+  </footer>
+
+  <script>
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  TOAST NOTIFICATIONS
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function showToast(icon, colorClass, title, description) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <div class="toast-icon ${colorClass}">${icon}</div>
+        <div class="toast-text">
+          <strong>${title}</strong>
+          <span>${description}</span>
+        </div>`;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  AGENT LOG
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function addLog(type, message) {
+      const log = document.getElementById('agentLog');
+      const now = new Date().toLocaleTimeString('en-GB');
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      entry.innerHTML = `<span class="log-time">${now}</span> ${message}`;
+      log.appendChild(entry);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function activateCard(cardId, duration = 3000) {
+      const card = document.getElementById(cardId);
+      card.classList.add('agent-active');
+      setTimeout(() => card.classList.remove('agent-active'), duration);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  DECLARATIVE FORM HANDLERS
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function handleFlightSearch(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      activateCard('flightCard');
+      showToast('✈', 'blue', 'searchFlights invoked', `${data.origin} → ${data.destination}`);
+      addLog('invoke', `<strong>searchFlights</strong> called: ${data.origin} → ${data.destination}, ${data.departure}`);
+      setTimeout(() => {
+        addLog('result', `↳ Found 12 flights. Cheapest: $342 (2 stops)`);
+      }, 800);
+    }
+
+    function handleHotelSearch(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      activateCard('hotelCard');
+      showToast('🏨', 'green', 'searchHotels invoked', `${data.city}, ${data.guests} guests`);
+      addLog('invoke', `<strong>searchHotels</strong> called: ${data.city}, ${data.checkin} to ${data.checkout}`);
+      setTimeout(() => {
+        addLog('result', `↳ Found 8 hotels. Top rated: The Grand (4.8★, $189/night)`);
+      }, 800);
+    }
+
+    function handleSupportTicket(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      activateCard('supportCard');
+      showToast('🎫', 'purple', 'createSupportTicket invoked', `${data.category} — ${data.priority}`);
+      addLog('invoke', `<strong>createSupportTicket</strong> called: ${data.category}, priority=${data.priority}`);
+      setTimeout(() => {
+        addLog('result', `↳ Ticket #TK-29471 created. Estimated response: 2h`);
+      }, 800);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  IMPERATIVE API SIMULATION
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function simulateConvertCurrency() {
+      showToast('💱', 'purple', 'convertCurrency invoked', '1000 USD → EUR');
+      addLog('discover', `Agent discovered tool: <strong>convertCurrency</strong>`);
+      addLog('invoke', `<strong>convertCurrency</strong>({ amount: 1000, from: "USD", to: "EUR" })`);
+      setTimeout(() => {
+        addLog('result', `↳ { converted: 921.50, rate: 0.9215 }`);
+      }, 600);
+    }
+
+    function simulateGetWeather() {
+      showToast('🌤️', 'blue', 'getDestinationWeather invoked', 'London, 7-day forecast');
+      addLog('discover', `Agent discovered tool: <strong>getDestinationWeather</strong>`);
+      addLog('invoke', `<strong>getDestinationWeather</strong>({ city: "London", days: 7 })`);
+      setTimeout(() => {
+        addLog('result', `↳ { temp: "8-12°C", conditions: "partly cloudy", rain_chance: "40%" }`);
+      }, 600);
+    }
+
+    function simulateGetVisaInfo() {
+      showToast('🛂', 'green', 'getVisaRequirements invoked', 'India → United Kingdom');
+      addLog('discover', `Agent discovered tool: <strong>getVisaRequirements</strong>`);
+      addLog('invoke', `<strong>getVisaRequirements</strong>({ nationality: "IN", destination: "GB" })`);
+      setTimeout(() => {
+        addLog('result', `↳ { visa_required: true, type: "Standard Visitor", processing: "3 weeks" }`);
+      }, 600);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  ACTUAL IMPERATIVE TOOL REGISTRATION
+    //  (works in Chrome 146+ with WebMCP flag)
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    if ('modelContext' in navigator) {
+      // Tool 1: Currency Converter
+      navigator.modelContext.registerTool({
+        name: 'convertCurrency',
+        description: 'Convert an amount from one currency to another using approximate rates.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            amount: { type: 'number', description: 'Amount to convert' },
+            from:   { type: 'string', description: 'Source currency code (e.g., USD, EUR, GBP)' },
+            to:     { type: 'string', description: 'Target currency code' }
+          },
+          required: ['amount', 'from', 'to']
+        },
+        execute: async (input, client) => {
+          // Demo rates
+          const rates = { 'USD-EUR': 0.9215, 'USD-GBP': 0.7890, 'EUR-USD': 1.0851, 'GBP-USD': 1.2674, 'USD-INR': 83.12, 'EUR-INR': 90.21 };
+          const key = `${input.from}-${input.to}`;
+          const rate = rates[key] || 1.0;
+          return { converted: Math.round(input.amount * rate * 100) / 100, rate, from: input.from, to: input.to };
+        }
+      });
+
+      // Tool 2: Destination Weather
+      navigator.modelContext.registerTool({
+        name: 'getDestinationWeather',
+        description: 'Get a weather forecast summary for a travel destination.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            city: { type: 'string', description: 'City name' },
+            days: { type: 'number', description: 'Forecast days (1-14)' }
+          },
+          required: ['city']
+        },
+        execute: async (input, client) => {
+          return {
+            city: input.city,
+            forecast_days: input.days || 7,
+            temperature: '8-12°C',
+            conditions: 'Partly cloudy with occasional rain',
+            rain_chance: '40%',
+            advisory: 'Pack layers and a waterproof jacket'
+          };
+        }
+      });
+
+      // Tool 3: Visa Requirements
+      navigator.modelContext.registerTool({
+        name: 'getVisaRequirements',
+        description: 'Check visa requirements for a specific nationality traveling to a destination country.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            nationality: { type: 'string', description: 'ISO 3166-1 alpha-2 country code of traveler (e.g., IN, US)' },
+            destination: { type: 'string', description: 'ISO 3166-1 alpha-2 country code of destination (e.g., GB, JP)' }
+          },
+          required: ['nationality', 'destination']
+        },
+        execute: async (input, client) => {
+          return {
+            visa_required: true,
+            visa_type: 'Standard Visitor Visa',
+            processing_time: '3 weeks',
+            validity: '6 months',
+            max_stay: '180 days',
+            application_url: `https://visa.example.com/${input.destination.toLowerCase()}`
+          };
+        }
+      });
+
+      addLog('info', '🟢 WebMCP detected — 6 tools registered (3 declarative + 3 imperative)');
+    } else {
+      addLog('info', '⚠️ WebMCP not available. Enable in chrome://flags → "WebMCP for testing"');
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //  CUSTOM EVENT: Demo instrumentation
+    //  (Not a spec feature — for visual feedback only)
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    document.addEventListener('toolinvoked', (event) => {
+      const { toolName, parameters } = event.detail;
+      addLog('invoke', `🤖 Agent invoked <strong>${toolName}</strong>: ${JSON.stringify(parameters)}`);
+      showToast('🤖', 'green', `${toolName}`, 'Invoked by AI agent');
+    });
+  </script>
+
+</body>
+</html>
